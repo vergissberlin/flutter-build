@@ -7,7 +7,7 @@ Build flutter web apps with Docker.
 ### Using this as base for your own Dockerfile
 
 ```Dockerfile
-FROM https://ghcr.io/vergissberlin/flutter-build as builder
+FROM ghcr.io/vergissberlin/flutter-build:main as builder
 
 # Copy your code to the container
 COPY . /app
@@ -25,7 +25,7 @@ COPY --from=builder /app/build/web /usr/share/nginx/html
 ### Use it directly
 
 ```bash
-docker run --rm -v $(pwd):/app -w /app https://ghcr.io/vergissberlin/flutter-build flutter build web --release
+docker run --rm -v $(pwd):/app -w /app ghcr.io/vergissberlin/flutter-build:main flutter build web --release
 ```
 
 ### Use it within a gitlab-ci pipeline
@@ -36,7 +36,7 @@ stages:
   
 build:
     stage: build
-    image: https://ghcr.io/vergissberlin/flutter-build
+    image: ghcr.io/vergissberlin/flutter-build:main
     script:
         - flutter build web --release
     artifacts:
