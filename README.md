@@ -1,6 +1,8 @@
 # flutter-build
 
-Build flutter web apps with Docker.
+[![Docker](https://github.com/vergissberlin/flutter-build/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/vergissberlin/flutter-build/actions/workflows/docker-publish.yml)
+
+Build Flutter **web apps** with Docker.
 
 ## Getting Started
 
